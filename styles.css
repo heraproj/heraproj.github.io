@@ -1,0 +1,480 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0d1117;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Prevents nav-links from pushing offscreen */
+    min-width: 150px;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+/* Make sure nav-links stay within the screen */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: nowrap; /* Prevents wrapping but ensures icons stay inside */
+}
+
+/* Fix icon sizes */
+.nav-links a {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #58a6ff; /* Change to neon blue */
+    text-shadow: 0 0 8px #58a6ff, 0 0 12px #58a6ff;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 30px 20px;
+    background: linear-gradient(to bottom, #161b22 0%, #1a1a2e 50%, #16213e 100%);
+    color: white;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #ffcc00; /* Python-inspired yellow */;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: #dcdcdc;
+    line-height: 1.6;
+}
+
+/* Hero Text Glow Effect */
+.hero h1, 
+.hero h2, 
+.hero p {
+    transition: text-shadow 0.3s ease-in-out;
+}
+
+.hero:hover h1, 
+.hero:hover h2, 
+.hero:hover p {
+    text-shadow: 0px 0px 6px #4ea8de, 0px 0px 12px rgba(78, 168, 222, 0.5);
+}
+
+
+/* General Buttons */
+.btn {
+    background: #2563eb; /* Deep modern blue */
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 20px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Hover Effect with Yellow Glow */
+.btn:hover {
+    background: #1e4db7; /* Darker blue */
+    box-shadow: 0 0 15px #ffcc00, 0 0 25px #ffcc00;
+    transform: scale(1.05);
+}
+
+/* Sections */
+/* What is Hera */
+.about {
+    background: transparent;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-box {
+    background: rgba(22, 27, 34, 0.95); /* Dark semi-transparent box */
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.about-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.6);
+}
+
+.about-box h2 {
+    font-size: 2rem;
+    color: #58a6ff;
+}
+
+.about-box p {
+    font-size: 1.2rem;
+    color: #dcdcdc;
+    line-height: 1.6;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3 columns, responsive */
+    gap: 20px;
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature {
+    background: rgba(22, 27, 34, 0.95); /* Dark semi-transparent box */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(88, 166, 255, 0.4);
+}
+
+.feature h3 {
+    color: #ffcc00;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #dcdcdc;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.about-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+h2, h3 {
+    color: #58a6ff;
+}
+
+/* Footer */
+.footer {
+    background: #0a0d12; /* Slightly darker than the body */
+    color: #ffffff;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Slightly fade text for a polished look */
+.footer p {
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer p:hover {
+    opacity: 1;
+}
+
+/* Horizontal Scrolling Carousel */
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    scroll-snap-align: start;
+}
+
+/* Button styling */
+.nav-buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Demo Code Section */
+.code-demo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.demo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+}
+
+.demo-description-box,
+.code-container {
+    flex: 1;
+    min-width: 300px;
+    box-sizing: border-box;
+}
+
+.demo-description-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    background: rgba(22, 27, 34, 0.95); /* Dark semi-transparent box */
+    border-radius: 12px;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(88, 166, 255, 0.6); /* Constant glow */
+    color: #dcdcdc; /* Text color */
+}
+
+.demo-description-box h2 {
+    font-size: 2rem;
+    color: #58a6ff;
+}
+
+.demo-description-box p {
+    font-size: 1.2rem;
+    color: #dcdcdc;
+    line-height: 1.6;
+}
+
+.code-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #1e1e1e; /* Match header background */
+}
+
+.code-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the title */
+    position: relative;
+    background: #1e1e1e;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 28px;
+    padding: 24px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.window-btns {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 12px;
+}
+
+.window-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+    display: inline-block;
+    box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.2);
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.window-btn:hover {
+    filter: brightness(0.8);
+}
+
+.code-title {
+    font-size: 1rem;
+    color: #dcdcdc;
+}
+
+.code-content {
+    position: relative;
+    padding: 12px;
+    background: #282c34; /* Match the background color of the code section */
+}
+
+#highlight-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    background: rgba(207, 207, 207, 0.2); /* Yellow highlight */
+    transition: top 0.3s, height 0.3s;
+}
+
+.code-container pre {
+    margin: 0;
+    padding: 0;
+}
+
+.code-container code {
+    display: block;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .demo-container {
+        flex-direction: column;
+    }
+}
+
+/* Prism Custom Overrides */
+.token.keyword {
+    color: #ff7b72; /* Keywords like def, class, import */
+}
+.token.function {
+    color: #dcdcaa; /* Function names */
+}
+.token.string {
+    color: #a5d6ff; /* Strings */
+}
+.token.comment {
+    color: #6a9955; /* Comments */
+}
+.token.operator {
+    color: #c586c0; /* Operators like =, >> */
+}
+
+/* Scroll Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Slowed down */
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .btn {
+        padding: 10px 20px;
+    }
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-links {
+        gap: 10px; /* Reduce space between icons */
+        max-width: 200px;
+    }
+
+    .nav-links a {
+        font-size: 1.3rem;
+    }
+}
+
+/* Background Particle Animation */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
