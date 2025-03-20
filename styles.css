@@ -243,27 +243,6 @@ h2, h3 {
     opacity: 1;
 }
 
-/* Horizontal Scrolling Carousel */
-.carousel-container {
-    overflow: hidden;
-    width: 100%;
-}
-
-.carousel {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-}
-
-.carousel img {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    scroll-snap-align: start;
-}
-
 /* Button styling */
 .nav-buttons {
     margin-top: 20px;
