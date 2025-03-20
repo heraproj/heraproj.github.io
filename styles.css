@@ -8,11 +8,28 @@ body {
     text-align: center;
 }
 
+/* Site Logo */
+.site-logo {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    z-index: 1001;
+}
+
+.site-logo img {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.site-logo img:hover {
+    transform: scale(1.1);
+}
+
 /* Navigation Bar */
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
     background: transparent;
     padding: 15px 20px;
     position: fixed;
@@ -24,38 +41,28 @@ body {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    flex: 1; /* Prevents nav-links from pushing offscreen */
-    min-width: 150px;
+    display: none;
 }
 
-.logo img {
-    width: 40px;
-    margin-right: 10px;
-}
-
-/* Make sure nav-links stay within the screen */
 .nav-links {
     display: flex;
     align-items: center;
     gap: 15px;
-    flex-wrap: nowrap; /* Prevents wrapping but ensures icons stay inside */
+    flex-wrap: nowrap;
+    padding-right: 20px;
 }
 
-/* Fix icon sizes */
 .nav-links a {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: #58a6ff; /* Change to neon blue */
-    text-shadow: 0 0 8px #58a6ff, 0 0 12px #58a6ff;
+    color: #58a6ff;
 }
 
 /* Hero Section */
@@ -70,13 +77,14 @@ body {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 10px;
+    color: #58a6ff;
 }
 
 .hero-subtitle {
     font-size: 1.75rem;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #ffcc00; /* Python-inspired yellow */;
+    color: #ffcc00;
 }
 
 .hero-description {
@@ -87,23 +95,21 @@ body {
     line-height: 1.6;
 }
 
-/* Hero Text Glow Effect */
-.hero h1, 
-.hero h2, 
+.hero h1,
+.hero h2,
 .hero p {
-    transition: text-shadow 0.3s ease-in-out;
+    transition: none;
 }
 
-.hero:hover h1, 
-.hero:hover h2, 
+.hero:hover h1,
+.hero:hover h2,
 .hero:hover p {
-    text-shadow: 0px 0px 6px #4ea8de, 0px 0px 12px rgba(78, 168, 222, 0.5);
+    text-shadow: none;
 }
 
-
-/* General Buttons */
+/* Buttons */
 .btn {
-    background: #2563eb; /* Deep modern blue */
+    background: #2563eb;
     color: white;
     padding: 12px 24px;
     text-decoration: none;
@@ -111,18 +117,14 @@ body {
     margin: 20px 10px;
     border-radius: 6px;
     font-weight: bold;
-    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out, background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
 }
 
-/* Hover Effect with Yellow Glow */
 .btn:hover {
-    background: #1e4db7; /* Darker blue */
-    box-shadow: 0 0 15px #ffcc00, 0 0 25px #ffcc00;
-    transform: scale(1.05);
+    background: #1e4db7;
 }
 
-/* Sections */
-/* What is Hera */
+/* Content Sections */
 .about {
     background: transparent;
     padding: 60px 20px;
@@ -132,18 +134,16 @@ body {
 }
 
 .about-box {
-    background: rgba(22, 27, 34, 0.95); /* Dark semi-transparent box */
+    background: rgba(22, 27, 34, 0.95);
     padding: 40px;
     border-radius: 12px;
     max-width: 600px;
     text-align: center;
-    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 }
 
 .about-box:hover {
     transform: scale(1.02);
-    box-shadow: 0 0 25px rgba(88, 166, 255, 0.6);
 }
 
 .about-box h2 {
@@ -159,7 +159,7 @@ body {
 
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3 columns, responsive */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 60px 20px;
     text-align: center;
@@ -168,16 +168,14 @@ body {
 }
 
 .feature {
-    background: rgba(22, 27, 34, 0.95); /* Dark semi-transparent box */
+    background: rgba(22, 27, 34, 0.95);
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(88, 166, 255, 0.2);
-    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out;
 }
 
 .feature:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(88, 166, 255, 0.4);
 }
 
 .feature h3 {
@@ -197,7 +195,8 @@ body {
     padding-left: 0;
 }
 
-h2, h3 {
+h2,
+h3 {
     color: #58a6ff;
 }
 
@@ -206,7 +205,7 @@ h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0a0d12; /* Slightly darker than the body */
+    background: #0a0d12;
     color: #ffffff;
     text-align: left;
     padding: 15px 20px;
@@ -222,9 +221,9 @@ h2, h3 {
 
 .footer-github-link {
     color: white;
-    font-size: 0.9rem; /* Match the font size of "The Hera Maintainers" */
+    font-size: 0.9rem;
     text-decoration: none;
-    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
     display: flex;
     align-items: center;
 }
@@ -233,7 +232,6 @@ h2, h3 {
     margin-right: 5px;
 }
 
-/* Slightly fade text for a polished look */
 .footer p {
     opacity: 0.8;
     transition: opacity 0.3s ease-in-out;
@@ -243,7 +241,7 @@ h2, h3 {
     opacity: 1;
 }
 
-/* Button styling */
+/* Demo Navigation Buttons */
 .nav-buttons {
     margin-top: 20px;
 }
@@ -252,15 +250,17 @@ button {
     padding: 10px 20px;
     margin: 0 10px;
     font-size: 1em;
-    background-color: #007bff;
+    background-color: #2563eb;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #1e4db7;
 }
 
 /* Demo Code Section */
@@ -292,12 +292,11 @@ button:hover {
     flex-direction: column;
     justify-content: space-between;
     padding: 40px;
-    background: rgba(22, 27, 34, 0.95); /* Dark semi-transparent box */
+    background: rgba(22, 27, 34, 0.95);
     border-radius: 12px;
     max-width: 600px;
     text-align: center;
-    box-shadow: 0 0 25px rgba(88, 166, 255, 0.6); /* Constant glow */
-    color: #dcdcdc; /* Text color */
+    color: #dcdcdc;
 }
 
 .demo-description-box h2 {
@@ -316,13 +315,13 @@ button:hover {
     flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
-    background: #1e1e1e; /* Match header background */
+    background: #1e1e1e;
 }
 
 .code-header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the title */
+    justify-content: center;
     position: relative;
     background: #1e1e1e;
     border-top-left-radius: 8px;
@@ -373,11 +372,11 @@ button:hover {
 .code-content {
     position: relative;
     padding: 12px;
-    background: #282c34; /* Match the background color of the code section */
+    background: #282c34;
 }
 
 .code-content pre.line-numbers {
-    padding-left: 3.8em; /* Adjust padding to accommodate line numbers */
+    padding-left: 3.8em;
 }
 
 #highlight-overlay {
@@ -386,7 +385,7 @@ button:hover {
     left: 0;
     width: 100%;
     pointer-events: none;
-    background: rgba(207, 207, 207, 0.2); /* Yellow highlight */
+    background: rgba(207, 207, 207, 0.2);
     transition: top 0.3s, height 0.3s;
 }
 
@@ -402,6 +401,7 @@ button:hover {
     line-height: 1.5;
 }
 
+/* Responsive Layouts */
 @media (max-width: 1300px) {
     .demo-container {
         flex-direction: column;
@@ -442,28 +442,32 @@ button:hover {
     }
 }
 
-/* Prism Custom Overrides */
+/* Prism Syntax Highlighting Customization */
 .token.keyword {
-    color: #ff7b72; /* Keywords like def, class, import */
+    color: #ff7b72;
 }
+
 .token.function {
-    color: #dcdcaa; /* Function names */
+    color: #dcdcaa;
 }
+
 .token.string {
-    color: #a5d6ff; /* Strings */
+    color: #a5d6ff;
 }
+
 .token.comment {
-    color: #6a9955; /* Comments */
+    color: #6a9955;
 }
+
 .token.operator {
-    color: #c586c0; /* Operators like =, >> */
+    color: #c586c0;
 }
 
 /* Scroll Animations */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Slowed down */
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .fade-in.visible {
@@ -471,25 +475,35 @@ button:hover {
     transform: translateY(0);
 }
 
-/* Responsive Design */
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 3rem;
     }
+
     .btn {
         padding: 10px 20px;
     }
+
     .navbar {
         padding: 10px 15px;
     }
 
     .nav-links {
-        gap: 10px; /* Reduce space between icons */
+        gap: 10px;
         max-width: 200px;
     }
 
     .nav-links a {
         font-size: 1.3rem;
+    }
+
+    .site-logo img {
+        width: 50px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -506,14 +520,15 @@ button:hover {
 
 /* Gradient Animation */
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+    0% {
+        background-position: 0% 50%;
+    }
 
-/* Responsive: stack on smaller screens */
-@media (max-width: 768px) {
-    .features {
-        grid-template-columns: 1fr;
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
