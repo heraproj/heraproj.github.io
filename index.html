@@ -13,8 +13,10 @@
 
     <!-- Prism.js for Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
     <script defer src="script.js"></script>
 </head>
@@ -81,7 +83,7 @@
                     <div class="code-title">dag_diamond.py</div>
                 </div>
                 <div class="code-content">
-                    <pre><div id="highlight-overlay"></div><code id="code-snippet" class="language-python">from hera.workflows import DAG, Workflow, script
+                    <pre class="line-numbers"><div id="highlight-overlay"></div><code id="code-snippet" class="language-python">from hera.workflows import DAG, Workflow, script
 
 @script()
 def echo(message: str):

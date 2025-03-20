@@ -375,6 +375,10 @@ button:hover {
     background: #282c34; /* Match the background color of the code section */
 }
 
+.code-content pre.line-numbers {
+    padding-left: 3.8em; /* Adjust padding to accommodate line numbers */
+}
+
 #highlight-overlay {
     position: absolute;
     top: 0;
@@ -397,9 +401,43 @@ button:hover {
     line-height: 1.5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .demo-container {
         flex-direction: column;
+    }
+
+    .demo-description-box,
+    .code-container {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .demo-description-box {
+        padding: 20px;
+    }
+
+    .demo-description-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .demo-description-box p {
+        font-size: 1rem;
+    }
+
+    .code-header {
+        padding: 12px;
+    }
+
+    .code-title {
+        font-size: 0.875rem;
+    }
+
+    .code-content {
+        padding: 8px;
+    }
+
+    .code-container code {
+        font-size: 0.85rem;
     }
 }
 
