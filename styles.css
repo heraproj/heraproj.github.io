@@ -203,12 +203,34 @@ h2, h3 {
 
 /* Footer */
 .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #0a0d12; /* Slightly darker than the body */
     color: #ffffff;
     text-align: left;
     padding: 15px 20px;
     font-size: 0.9rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-github-link {
+    color: white;
+    font-size: 0.9rem; /* Match the font size of "The Hera Maintainers" */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.footer-github-link i {
+    margin-right: 5px;
 }
 
 /* Slightly fade text for a polished look */
