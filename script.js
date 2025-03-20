@@ -103,9 +103,11 @@ drawParticles();
 
 // Code demo script
 const codeSnippets = [
-    { line: 3, numLines: 3, description: 'The <code>@script</code> decorator lets you run any function on Kubernetes.' },
-    { line: 11, numLines: 6, description: 'This is the <code>DAG</code> definition, which specifies the workflow structure.' },
-    { line: 18, numLines: 1, description: 'The <code>w.create()</code> method submits the workflow to Argo.' }
+    { line: 1, numLines: 1, description: 'Wrapper classes provide syntactic sugar and code completion' },
+    { line: 3, numLines: 3, description: 'The <code>@script</code> decorator lets you run <em>any</em> function on Kubernetes' },
+    { line: 7, numLines: 4, description: 'The <code>Workflow</code> context is where you build out the orchestration logic, <em>outside</em> of your business logic' },
+    { line: 11, numLines: 6, description: 'The <code>DAG</code> definition specifies the tasks and the workflow execution order' },
+    { line: 18, numLines: 1, description: 'The <code>w.create()</code> method creates the workflow on Argo' }
 ];
 
 let currentSnippetIndex = 0;

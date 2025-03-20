@@ -401,6 +401,19 @@ button:hover {
     line-height: 1.5;
 }
 
+/* Code Box */
+.code-box {
+    background: #1e1e1e;
+    color: #efefef;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    display: inline-block;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
 /* Responsive Layouts */
 @media (max-width: 1300px) {
     .demo-container {
