@@ -25,36 +25,43 @@
 <body>
     <canvas id="particles"></canvas>
 
-    <!-- Logo -->
-    <div class="site-logo">
-        <a href="index.html">
-            <img src="assets/hera-logo.svg" alt="Hera Logo">
-        </a>
-    </div>
-
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-links">
-            <a href="https://hera.readthedocs.io/en/stable/" title="Docs">
-                <i class="fas fa-book"></i>
-            </a>
-            <a href="https://github.com/argoproj-labs/hera" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://slack.cncf.io/" title="Slack">
-                <i class="fab fa-slack"></i>
-            </a>
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="site-logo">
+            <a href="index.html">
+                <img src="assets/hera-logo.svg" alt="Hera Logo">
+            </a><span class="logo-text">Hera</span>
         </div>
-    </nav>
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="https://hera.readthedocs.io/en/stable/" title="Docs">
+                    <i class="fas fa-book"></i>
+                </a>
+                <a href="https://github.com/argoproj-labs/hera" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://slack.cncf.io/" title="Slack">
+                    <i class="fab fa-slack"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <h1 class="hero-title">Hera</h1>
-        <h2 class="hero-subtitle">The simplest way to run workflows in Python, powered by Argo Workflows.</h2>
-        <p class="hero-description">Define, run, and manage Kubernetes-native workflows effortlessly with Python.
-            Automate complex pipelines without the YAML headache.</p>
-        <a href="https://hera.readthedocs.io/en/stable/walk-through/quick-start/" class="btn">Try Hera Now</a>
-    </header>
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">The simplest way to run workflows in Python, powered by Argo Workflows</h1>
+            <h2 class="hero-subtitle">Define, run, and manage Kubernetes-native workflows effortlessly with Python.
+                Automate complex pipelines without the YAML headache.</h2>
+            <p class="hero-description"></p>
+            <div class="hero-buttons">
+                <a href="https://github.com/argoproj-labs/hera" class="btn github-btn" id="github-star-btn" target="_blank">
+                    <i class="fab fa-github"></i> Star on GitHub ★ <span id="star-count">...</span>
+                </a>
+                <a href="https://hera.readthedocs.io/en/stable/walk-through/quick-start/" class="btn try-btn">Try Hera Now</a>
+            </div>
+        </div>
+    </div>
 
     <!-- What is Hera -->
     <section class="about fade-in">
@@ -139,7 +146,7 @@ w.create()</code></pre>
                 <li>Effortlessly run ML and data processing on Kubernetes.</li>
                 <li>Open source and freely available under Apache 2.0 license.</li>
             </ul>
-            <a href="https://hera.readthedocs.io/en/stable/walk-through/quick-start/" class="btn">Get Started Now</a>
+            <a href="https://hera.readthedocs.io/en/stable/walk-through/quick-start/" class="btn try-btn">Get Started Now</a>
             <div class="code-box">
                 <code>pip install hera</code>
             </div>

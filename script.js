@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.forEach((element) => observer.observe(element));
 });
 
-// Background particle effects (DAG traversal simulation)
+// Background particle effects
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const numParticles = 200; // Adjust for density
+const numParticles = 100; // Adjust for density
 const particles = [];
 
 // Initialize particles function (extracted to be reusable)
@@ -42,8 +42,8 @@ function initializeParticles() {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
             radius: Math.random() * 2 + 1, // Smaller, subtle particles
-            dx: (Math.random() - 0.5) * 0.5, // Slow horizontal movement
-            dy: (Math.random() - 0.5) * 0.5, // Slow vertical movement
+            dx: (Math.random() - 0.5) * 0.25, // Slow horizontal movement
+            dy: (Math.random() - 0.5) * 0.25, // Slow vertical movement
             opacity: Math.random() * 0.5 + 0.3, // Keep them subtle
         });
     }
@@ -68,7 +68,7 @@ window.addEventListener('resize', function () {
 
         // Reinitialize particles for new dimensions
         initializeParticles();
-    }, 250); // Wait for 250ms after resize ends before redrawing
+    }, 100); // Wait for 100ms after resize ends before redrawing
 });
 
 // Animate particles
@@ -173,4 +173,21 @@ document.getElementById("next-button").addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
     updateCodeSnippet();
     snippetInterval = setInterval(showNextSnippet, 5000);
+});
+
+// Fetch GitHub star count and update the button
+document.addEventListener("DOMContentLoaded", () => {
+    const starCountElement = document.getElementById("star-count");
+    fetch("https://api.github.com/repos/argoproj-labs/hera")
+        .then(response => response.json())
+        .then(data => {
+            if (data.stargazers_count) {
+                const roundedStars = Math.trunc(data.stargazers_count / 100) * 100;
+                starCountElement.textContent = `${roundedStars.toLocaleString()}+`;
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching GitHub star count:", error);
+            starCountElement.textContent = "N/A";
+        });
 });

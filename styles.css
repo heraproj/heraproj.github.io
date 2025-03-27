@@ -1,145 +1,220 @@
+:root {
+    --primary-color: #3a689c;
+    --primary-hover-color: #357ABD;
+    --secondary-color: #349782;
+    --background-color: #065294;
+    --text-color: #2c3e50;
+    --navbar-background: #ebebeb;
+    --navbar-border: rgba(200, 200, 200, 0.5);
+    --hero-title-color: #32547e;
+    --hero-subtitle-color: #a2eafc;
+    --hero-description-color: #dedede;
+    --footer-background: #ecf0f1;
+    --footer-text-color: #2c3e50;
+    --link-hover-color: #50e3c2;
+    --button-hover-color: #357ABD;
+}
+
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: #0d1117;
-    color: #ffffff;
+    background: var(--background-color);
+    color: var(--text-color);
     text-align: center;
 }
 
-/* Site Logo */
-.site-logo {
+/* Header Section */
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--navbar-background);
+    padding: 0 20px;
     position: fixed;
-    top: 10px;
-    left: 20px;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--navbar-border);
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
     z-index: 1001;
 }
 
 .site-logo img {
-    width: 60px;
-    height: auto;
-    transition: transform 0.3s ease;
+    height: 40px;
+    transition: transform 0.15s ease;
+    filter: drop-shadow(0 0 1px black);
 }
 
 .site-logo img:hover {
     transform: scale(1.1);
 }
 
-/* Navigation Bar */
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-left: 10px;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out;
+}
+
 .navbar {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
-    background: transparent;
-    padding: 15px 20px;
+    gap: 15px;
+    padding: 0 20px;
     position: fixed;
     width: 100%;
+    height: 60px;
     top: 0;
     left: 0;
     z-index: 1000;
     box-sizing: border-box;
 }
 
-.logo {
-    display: none;
-}
-
 .nav-links {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 15px;
-    flex-wrap: nowrap;
-    padding-right: 20px;
 }
 
 .nav-links a {
     display: flex;
     align-items: center;
     font-size: 1.5rem;
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.15s ease-in-out;
 }
 
 .nav-links a:hover {
-    color: #58a6ff;
+    color: var(--link-hover-color);
 }
 
 /* Hero Section */
 .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 30px 20px;
-    background: linear-gradient(to bottom, #161b22 0%, #1a1a2e 50%, #16213e 100%);
+    padding: 0 20px;
+    margin: 0 auto;
+    min-height: 70vh;
+    background: linear-gradient(to bottom, var(--navbar-background), var(--primary-hover-color), var(--background-color));
     color: white;
 }
 
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+/* Hero Title with Gradient */
 .hero-title {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #58a6ff;
+    color: transparent; /* Make text transparent to show gradient */
+    background: white;
+    -webkit-background-clip: text; /* Clip background to text */
+    background-clip: text; /* Standard background clip */
 }
 
 .hero-subtitle {
-    font-size: 1.75rem;
     font-weight: 500;
     margin-bottom: 20px;
-    color: #ffcc00;
+    color: var(--hero-subtitle-color);
 }
 
-.hero-description {
-    font-size: 1.25rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    color: #dcdcdc;
-    line-height: 1.6;
+/* Hero Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-.hero h1,
-.hero h2,
-.hero p {
-    transition: none;
+.github-btn {
+    background: #f6f8fa; /* Light gray background used on GitHub */
+    color: #24292e;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease-in-out;
 }
 
-.hero:hover h1,
-.hero:hover h2,
-.hero:hover p {
-    text-shadow: none;
+.github-btn:hover {
+    background: #b0b2b5;
+}
+
+.try-btn {
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s ease-in-out;
+}
+
+.try-btn:hover {
+    background: var(--primary-hover-color);
+}
+
+#star-count {
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #383838;
 }
 
 /* Buttons */
 .btn {
-    background: #2563eb;
-    color: white;
     padding: 12px 24px;
     text-decoration: none;
     display: inline-block;
     margin: 20px 10px;
     border-radius: 6px;
     font-weight: bold;
-    transition: background 0.3s ease-in-out;
-}
-
-.btn:hover {
-    background: #1e4db7;
+    transition: background 0.15s ease-in-out;
 }
 
 /* Content Sections */
 .about {
     background: transparent;
-    padding: 60px 20px;
+    padding: 100px 20px; /* Add extra padding to prevent overlap */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .about-box {
-    background: rgba(22, 27, 34, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     padding: 40px;
     border-radius: 12px;
     max-width: 600px;
     text-align: center;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.15s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-box:hover {
@@ -148,12 +223,12 @@ body {
 
 .about-box h2 {
     font-size: 2rem;
-    color: #58a6ff;
+    color: var(--secondary-color);
 }
 
 .about-box p {
     font-size: 1.2rem;
-    color: #dcdcdc;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -168,10 +243,11 @@ body {
 }
 
 .feature {
-    background: rgba(22, 27, 34, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 12px;
     transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .feature:hover {
@@ -179,13 +255,13 @@ body {
 }
 
 .feature h3 {
-    color: #ffcc00;
+    color: var(--secondary-color);
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .feature p {
-    color: #dcdcdc;
+    color: var(--text-color);
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -197,7 +273,7 @@ body {
 
 h2,
 h3 {
-    color: #58a6ff;
+    color: var(--secondary-color);
 }
 
 /* Footer */
@@ -205,12 +281,12 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0a0d12;
-    color: #ffffff;
+    background: var(--footer-background);
+    color: var(--footer-text-color);
     text-align: left;
     padding: 15px 20px;
     font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--navbar-border);
 }
 
 .footer-links {
@@ -220,10 +296,10 @@ h3 {
 }
 
 .footer-github-link {
-    color: white;
+    color: var(--footer-text-color);
     font-size: 0.9rem;
     text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.15s ease-in-out;
     display: flex;
     align-items: center;
 }
@@ -234,7 +310,7 @@ h3 {
 
 .footer p {
     opacity: 0.8;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.15s ease-in-out;
 }
 
 .footer p:hover {
@@ -243,24 +319,26 @@ h3 {
 
 /* Demo Navigation Buttons */
 .nav-buttons {
-    margin-top: 20px;
+    margin-top: auto; /* Push buttons to the bottom of the parent */
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
 }
 
 button {
     padding: 10px 20px;
     margin: 0 10px;
     font-size: 1em;
-    background-color: #2563eb;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    transition: background 0.15s ease-in-out;
     font-weight: bold;
 }
 
 button:hover {
-    background-color: #1e4db7;
+    background-color: var(--primary-hover-color);
 }
 
 /* Demo Code Section */
@@ -273,9 +351,11 @@ button:hover {
     margin: 0 auto;
 }
 
+/* Demo Container */
 .demo-container {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center; /* Align items vertically in the row */
+    justify-content: space-between; /* Space between description and code container */
     gap: 20px;
     width: 100%;
 }
@@ -287,26 +367,30 @@ button:hover {
     box-sizing: border-box;
 }
 
+/* Demo Description Box */
 .demo-description-box {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 40px;
-    background: rgba(22, 27, 34, 0.95);
+    justify-content: space-between; /* Space out content and anchor buttons to the bottom */
+    align-items: center;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 12px;
+    min-height: 300px;
     max-width: 600px;
     text-align: center;
     color: #dcdcdc;
+    box-sizing: border-box;
 }
 
 .demo-description-box h2 {
     font-size: 2rem;
-    color: #58a6ff;
+    color: var(--secondary-color);
 }
 
 .demo-description-box p {
     font-size: 1.2rem;
-    color: #dcdcdc;
+    color: var(--text-color);
     line-height: 1.6;
 }
 
@@ -386,7 +470,7 @@ button:hover {
     width: 100%;
     pointer-events: none;
     background: rgba(207, 207, 207, 0.2);
-    transition: top 0.3s, height 0.3s;
+    transition: top 0.15s, height 0.15s;
 }
 
 .code-container pre {
@@ -529,19 +613,4 @@ button:hover {
     height: 100%;
     pointer-events: none;
     z-index: -1;
-}
-
-/* Gradient Animation */
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
 }
