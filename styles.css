@@ -6,7 +6,7 @@
     --text-color: #2c3e50;
     --navbar-background: #ebebeb;
     --navbar-border: rgba(200, 200, 200, 0.5);
-    --hero-title-color: #32547e;
+    --hero-title-color: #ffffff;
     --hero-subtitle-color: #a2eafc;
     --hero-description-color: #dedede;
     --footer-background: #ecf0f1;
@@ -50,22 +50,28 @@ body {
 
 .site-logo img {
     height: 40px;
-    transition: transform 0.15s ease;
     filter: drop-shadow(0 0 1px black);
 }
 
-.site-logo img:hover {
-    transform: scale(1.1);
+.site-logo:hover {
+    color: var(--primary-hover-color); /* Subtle hover effect */
+}
+
+/* Logo Text */
+.site-logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* Remove underline */
 }
 
 .logo-text {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--text-color);
+    color: var(--primary-color); /* Professional color */
     margin-left: 10px;
-    text-decoration: none;
     transition: color 0.15s ease-in-out;
 }
+
 
 .navbar {
     display: flex;
@@ -126,8 +132,7 @@ body {
     font-size: 3rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: transparent; /* Make text transparent to show gradient */
-    background: white;
+    color: var(--hero-title-color);
     -webkit-background-clip: text; /* Clip background to text */
     background-clip: text; /* Standard background clip */
 }
