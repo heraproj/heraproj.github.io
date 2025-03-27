@@ -163,6 +163,10 @@ body {
     background: #b0b2b5;
 }
 
+.github-btn:hover .star-box {
+    background: #d6d8db;
+}
+
 .try-btn {
     background: var(--primary-color);
     color: white;
@@ -496,6 +500,21 @@ button:hover {
     font-family: 'Fira Code', 'Courier New', monospace;
     font-size: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Star Box */
+.star-box {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.9);
+    color: #24292e; /* GitHub dark gray text */
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    margin-left: 8px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: background 0.15s ease-in-out;
 }
 
 /* Responsive Layouts */
