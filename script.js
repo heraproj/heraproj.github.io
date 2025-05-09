@@ -22,6 +22,16 @@ document.addEventListener("DOMContentLoaded", () => {
     elements.forEach((element) => observer.observe(element));
 });
 
+// Drop shadow effect on scroll
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.site-header');
+    if (window.scrollY > 0) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
 // Background particle effects
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
@@ -99,7 +109,7 @@ function drawParticles() {
     requestAnimationFrame(drawParticles);
 }
 
-drawParticles();
+// drawParticles();
 
 // Code demo script
 const codeSnippets = [
@@ -177,17 +187,71 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Fetch GitHub star count and update the button
 document.addEventListener("DOMContentLoaded", () => {
-    const starCountElement = document.getElementById("star-count");
+    const starCountHeroElement = document.getElementById("star-count");
+    const starCountStatElement = document.getElementById("github-stars");
+    const contributorStatElement = document.getElementById("github-contributors");
+    const pullRequestStatElement = document.getElementById("github-pull-requests");
+    const commitsStatElement = document.getElementById("github-commits");
+
+
     fetch("https://api.github.com/repos/argoproj-labs/hera")
         .then(response => response.json())
         .then(data => {
             if (data.stargazers_count) {
                 const roundedStars = Math.trunc(data.stargazers_count / 100) * 100;
-                starCountElement.textContent = `${roundedStars.toLocaleString()}+`;
+                starCountHeroElement.textContent = `${roundedStars.toLocaleString()}+`;
+                starCountStatElement.textContent = `${roundedStars.toLocaleString()}+`;
+            }
+            if (data.commits_url) {
+                // Estimate commits from default branch
+                fetch(`https://api.github.com/repos/argoproj-labs/hera/commits?per_page=1`)
+                    .then(res => res.headers.get("Link"))
+                    .then(linkHeader => {
+                        const match = linkHeader?.match(/&page=(\d+)>; rel="last"/);
+                        if (match) {
+                            const roundedCommits = Math.trunc(parseInt(match[1]) / 10) * 10;
+                            commitsStatElement.textContent = `${roundedCommits.toLocaleString()}+`;
+                        }
+                    })
+                    .catch(() => {
+                        commitsStatElement.textContent = "N/A";
+                    });
             }
         })
         .catch(error => {
-            console.error("Error fetching GitHub star count:", error);
-            starCountElement.textContent = "N/A";
+            console.error("Error fetching star count:", error);
+            // Fallback to a default value if the API call fails
+            const backupNumber = 700;
+            starCountHeroElement.textContent = `${backupNumber.toLocaleString()}+`;
+            starCountStatElement.textContent = `${backupNumber.toLocaleString()}+`;
+        });
+
+    // Contributors
+    fetch("https://api.github.com/repos/argoproj-labs/hera/contributors?per_page=1&anon=true")
+        .then(res => res.headers.get("Link"))
+        .then(linkHeader => {
+            const match = linkHeader?.match(/&page=(\d+)>; rel="last"/);
+            if (match) {
+                const roundedContributors = Math.trunc(parseInt(match[1]) / 10) * 10;
+                contributorStatElement.textContent = `${roundedContributors.toLocaleString()}+`;
+            }
+        })
+        .catch(() => {
+            const backupNumber = 60;
+            contributorStatElement.textContent = `${backupNumber.toLocaleString()}+`;
+        });
+
+    // Pull requests
+    fetch("https://api.github.com/search/issues?q=repo:argoproj-labs/hera+is:pr")
+        .then(res => res.json())
+        .then(data => {
+            if (data.total_count) {
+                const roundedPullRequests = Math.trunc(data.total_count / 10) * 10;
+                pullRequestStatElement.textContent = `${roundedPullRequests.toLocaleString()}+`;
+            }
+        })
+        .catch(() => {
+            const backupNumber = 730;
+            pullRequestStatElement.textContent = `${backupNumber.toLocaleString()}+`;
         });
 });

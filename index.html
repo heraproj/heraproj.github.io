@@ -14,10 +14,12 @@
 
     <!-- Prism.js for Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
     <script defer src="script.js"></script>
 </head>
@@ -27,25 +29,27 @@
 
     <!-- Header Section -->
     <header class="site-header">
-        <div class="site-logo">
-            <a href="index.html">
-                <img src="assets/hera-logo.svg" alt="Hera Logo">
-                <span class="logo-text">Hera</span>
-            </a>
-        </div>
-        <nav class="navbar">
-            <div class="nav-links">
-                <a href="https://hera.readthedocs.io/en/stable/" title="Docs">
-                    <i class="fas fa-book"></i>
-                </a>
-                <a href="https://github.com/argoproj-labs/hera" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://slack.cncf.io/" title="Slack">
-                    <i class="fab fa-slack"></i>
+        <div class="header-middle">
+            <div class="site-logo">
+                <a href="index.html">
+                    <img src="assets/hera-logo.svg" alt="Hera Logo">
+                    <span class="logo-text">Hera</span>
                 </a>
             </div>
-        </nav>
+            <nav>
+                <div class="nav-links">
+                    <a href="https://hera.readthedocs.io/en/stable/" title="Docs">
+                        <i class="fas fa-book"></i>
+                    </a>
+                    <a href="https://github.com/argoproj-labs/hera" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://slack.cncf.io/" title="Slack">
+                        <i class="fab fa-slack"></i>
+                    </a>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -54,12 +58,14 @@
             <h1 class="hero-title">The simplest way to run workflows in Python, powered by Argo Workflows</h1>
             <h2 class="hero-subtitle">Define, run, and manage Kubernetes-native workflows effortlessly with Python.
                 Automate complex pipelines without the YAML headache.</h2>
-            <p class="hero-description"></p>
             <div class="hero-buttons">
-                <a href="https://github.com/argoproj-labs/hera" class="btn github-btn" id="github-star-btn" target="_blank">
-                    <i class="fab fa-github"></i> Star on GitHub<div class="star-box"> ★ <span id="star-count">...</span></div>
+                <a href="https://github.com/argoproj-labs/hera" class="btn github-btn" id="github-star-btn"
+                    target="_blank">
+                    <i class="fab fa-github"></i> Star on GitHub<div class="star-box"> ★ <span
+                            id="star-count">...</span></div>
                 </a>
-                <a href="https://hera.readthedocs.io/en/stable/walk-through/quick-start/" class="btn try-btn">Try Hera Now</a>
+                <a href="https://hera.readthedocs.io/en/stable/walk-through/quick-start/" class="btn try-btn">Get
+                    Started</a>
             </div>
         </div>
     </div>
@@ -78,7 +84,8 @@
         <div class="demo-container">
             <div class="demo-description-box">
                 <h2>See Hera in Action!</h2>
-                <p id="demo-description">The <code>@script</code> decorator lets you run any function on Kubernetes, with
+                <p id="demo-description">The <code>@script</code> decorator lets you run any function on Kubernetes,
+                    with
                     native integration into Argo Workflows.</p>
                 <div class="nav-buttons">
                     <button id="prev-button">◀</button>
@@ -147,16 +154,66 @@ w.create()</code></pre>
                 <li>Effortlessly run ML and data processing on Kubernetes.</li>
                 <li>Open source and freely available under Apache 2.0 license.</li>
             </ul>
-            <a href="https://hera.readthedocs.io/en/stable/walk-through/quick-start/" class="btn try-btn">Get Started Now</a>
-            <div class="code-box">
-                <code>pip install hera</code>
+            <a href="https://hera.readthedocs.io/en/stable/walk-through/quick-start/" class="btn try-btn">Get Started
+                Now</a>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section class="community fade-in">
+        <div class="community-box">
+            <h2>Join Our Developer Community</h2>
+            <p>Hera is built by developers for developers. Our open-source community is creating the future of
+                cloud-native Python orchestration. Contribute code, report issues, or just star the repo to show
+                support.</p>
+            <div>
+                <div class="github-stats">
+                    <div class="github-stat">
+                        <span class="stat-number" id="github-stars">...</span>
+                        <span class="stat-label">Github Stars</span>
+                    </div>
+                    <div class="github-stat">
+                        <span class="stat-number" id="github-contributors">...</span>
+                        <span class="stat-label">Contributors</span>
+                    </div>
+                    <div class="github-stat">
+                        <span class="stat-number" id="github-pull-requests">...</span>
+                        <span class="stat-label">Pull Requests</span>
+                    </div>
+                    <div class="github-stat">
+                        <span class="stat-number" id="github-commits">...</span>
+                        <span class="stat-label">Commits</span>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Testimonials Section -->
+        <div class="testimonials fade-in">
+            <p><i>Testimonials from Hera's anonymous <a href="https://dev.to/elliot_gunton/hera-developer-survey-2025-168d">2025 developer survey</a></i></p>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Massively simpler than trying to manage complex YAML files."</p>
+                    <span>- DevOps Engineer</span>
+                </div>
+                <div class="testimonial">
+                    <p>"For me: It just works"</p>
+                    <span>- Data Scientist</span>
+                </div>
+                <div class="testimonial">
+                    <p>"It is 1000x better than Kubeflow SDK and easier than Argo YAML to author pipelines."</p>
+                    <span>- Machine Learning Engineer</span>
+                </div>
+                <div class="testimonial">
+                    <p>"Harness the power of Argo Workflows directly from Python, low effort to create workflows."</p>
+                    <span>- DevOps Engineer</span>
+                </div>
+            </div>
     </section>
 
     <!-- Footer Section -->
     <footer class="footer">
-        <p>&copy; The Hera Maintainers</p>
+        <p>&copy; Hera Project</p>
         <a href="https://github.com/heraproj/heraproj.github.io" title="GitHub" class="footer-github-link">
             <i class="fab fa-github"></i> Powered by GitHub Pages
         </a>
