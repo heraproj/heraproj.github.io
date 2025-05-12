@@ -402,6 +402,7 @@ button:hover {
     max-width: 1250px;
     padding: 40px 20px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .code-container {
@@ -421,7 +422,6 @@ button:hover {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     min-height: 300px;
-    min-width: 600px;
     max-width: 600px;
     text-align: center;
     color: #dcdcdc;
@@ -502,6 +502,7 @@ button:hover {
     position: relative;
     padding: 12px;
     background: #282c34;
+    overflow: hidden;
 }
 
 .code-content pre.line-numbers {
@@ -569,7 +570,8 @@ button:hover {
 }
 
 .github-stats {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     justify-content: center;
     gap: 5px;
@@ -708,6 +710,10 @@ button:hover {
 
     .features {
         grid-template-columns: 1fr;
+    }
+
+    .github-stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
